@@ -1,19 +1,30 @@
-fastapi
-uvicorn[standard]
+[project]
+name = "inventory-management-api"
+version = "0.1.0"
+requires-python = ">=3.13"
 
-sqlalchemy
-asyncpg
-alembic
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
 
-pydantic
-pydantic-settings
+    "sqlalchemy",
+    "asyncpg",
+    "alembic",
 
-python-jose[cryptography]
-passlib[bcrypt]
+    "pydantic",
+    "pydantic-settings",
 
-pytest
-pytest-asyncio
+    "python-jose[cryptography]",
+    "passlib[bcrypt]",
+    "python-multipart",
+]
 
-httpx
+[dependency-groups]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "httpx",
 
-python-dotenv
+    "ruff",
+    "mypy",
+]
